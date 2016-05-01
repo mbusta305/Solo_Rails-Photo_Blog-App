@@ -1,0 +1,16 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+img {
+  height: 15em;
+  width: 15em;
+  flex-direction: row;
+
+}
+
+html {
+  background: none;
+  background-color: grey;
+}

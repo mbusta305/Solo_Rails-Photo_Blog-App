@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Photogur</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<h1> F-STOP </h1>
+  <div id="user_header">
+    <% if current_user %>
+      Logged in as <%= current_user.email %>
+      <%= link_to 'Log Out', logout_path, :class => "btn btn-danger btn-xs" %>
+    <%else %>
+      <%= link_to 'Sign Up', signup_path, :class => "btn btn-success btn-xs" %> |
+      <%= link_to 'Log In', login_path, :class => "btn btn-info btn-xs" %>
+    <% end %>
+</div>
+
+  <% flash.each do |key, value| %>
+    <%= content_tag(:div, class: "alert alert-#{key}") do %>
+    <p class="alert alert-info"><%= value %></p>
+    <% end %>
+    <% end %>
+
+
+<%= yield %>
+
+</body>
+</html>

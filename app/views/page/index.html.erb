@@ -1,0 +1,5 @@
+<!-- edit_user GET    /user/:id/edit(.:format) -->
+
+<% if current_user %>
+  <%= link_to 'user_profile', edit_user_path(current_user.id) %>
+<% end %>

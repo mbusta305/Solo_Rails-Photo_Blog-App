@@ -1,0 +1,18 @@
+<p>
+  <strong>First name:</strong>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<%= link_to 'Photo Blog', pictures_path , :class => "btn btn-primary" %>
+<%= link_to 'Edit Profile', edit_user_path , :class => "btn btn-info" %>
+<%= link_to 'Back', users_path , :class => "btn btn-warning" %>
