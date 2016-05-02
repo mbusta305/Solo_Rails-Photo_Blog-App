@@ -13,9 +13,9 @@
       <tr>
         <td><%= picture.title %></td>
         <td><%= image_tag picture.avatar.url %></td>
-        <td><%= link_to 'Show', picture %></td>
-        <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
-        <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', picture, :class => "btn btn-success btn-xs" %></td>
+        <td><%= link_to 'Edit', edit_picture_path(picture), :class => "btn btn-warning btn-xs" %></td>
+        <td><%= link_to 'Delete', picture, method: :delete, data: {confirm: 'Are you sure?'}, :class => "btn btn-danger btn-xs" %></td>
       </tr>
     <% end %>
   </tbody>
